@@ -1,9 +1,9 @@
 :root {
-            --primary-color: #268d0d; 
-            --secondary-color: #2e7d32;
+            --primary-color: #c10b0b; 
+            --secondary-color: #d8e3d8;
             --accent-color: #8bc34a;
             --text-color: #000000;   
-            --pattern-color: rgba(255,255,255,0.07);
+            --pattern-color: rgba(16, 44, 205, 0.07);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
