@@ -2,12 +2,12 @@
   --bg: #0A1A0E;
   --bg-elevated: #0F2614;
   --surface: #1A3321;
-  --border: rgba(30, 122, 61, 0.3);
+  --border: rgba(47, 158, 65, 0.3);
 
-  --accent: #22542f;
-  --accent-dim: #0b4026;
-  --accent-2: #FF3322;
-  --accent-2-dim: #CC291A;
+  --accent: #2F9E41;       /* verde oficial Rede Federal — Pantone 362C */
+  --accent-dim: #1F6E2C;
+  --accent-2: #CD191E;     /* vermelho oficial Rede Federal — Pantone 187C */
+  --accent-2-dim: #9E1317;
 
   --text: #E8F5E9;
   --text-muted: #A5D6A7;
@@ -91,10 +91,10 @@ a{ color: inherit; }
 }
 .logos-row{
   display: flex; align-items: center; justify-content: center;
-  gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+  gap: 2.75rem; margin-bottom: 2.5rem; flex-wrap: wrap;
 }
 .logo-img{ 
-  height: 52px; 
+  height: 76px; 
   width: auto; 
   object-fit: contain;
   filter: brightness(0) invert(1);
@@ -248,7 +248,7 @@ a{ color: inherit; }
 }
 .btn:hover{ transform: translateY(-1px); }
 .btn-outline{ background: var(--surface); border: 1px solid var(--accent); color: var(--accent); }
-.btn-outline:hover{ background: rgba(0, 204, 102, 0.15); }
+.btn-outline:hover{ background: rgba(47, 158, 65, 0.18); }
 .btn-ghost{ background: transparent; color: var(--text-muted); }
 .btn-ghost:hover{ color: var(--text); }
 
@@ -287,6 +287,91 @@ a{ color: inherit; }
 }
 .committee-list li:last-child{ border-bottom: none; }
 .committee-list span{ color: var(--text-muted); font-size: .85rem; }
+
+/* =========================================================
+   Palestrantes
+   ========================================================= */
+.speaker-grid{
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.speaker-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  border-top: 3px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+}
+.speaker-card:nth-child(3n+2){ border-top-color: var(--accent-2); }
+
+.speaker-avatar{
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  margin-bottom: 1.1rem;
+  background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+  border: 2px solid var(--border);
+  position: relative;
+}
+.speaker-avatar::after{
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.35) 0 14px, transparent 15px),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0 22px, transparent 23px);
+}
+.speaker-card:nth-child(3n+2) .speaker-avatar{
+  background: linear-gradient(135deg, var(--accent-2-dim), var(--accent-2));
+}
+
+.speaker-name{
+  font-size: 1.05rem;
+  margin-bottom: .2em;
+}
+.speaker-affiliation{
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--accent);
+  margin: 0 0 .8em;
+}
+.speaker-card:nth-child(3n+2) .speaker-affiliation{ color: var(--accent-2); }
+
+.speaker-bio{
+  color: var(--text-muted);
+  font-size: .92rem;
+  flex-grow: 1;
+  margin-bottom: 1.2em;
+}
+.speaker-social{
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+.speaker-social a{
+  font-size: .85rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color .15s ease;
+}
+.speaker-social a:hover{ color: var(--accent); }
+
+.speaker-slot-empty{
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  color: var(--text-muted);
+  min-height: 220px;
+  gap: .6rem;
+}
+.speaker-slot-empty .sponsor-placeholder-icon{ font-size: 1.6rem; color: var(--accent-2); }
 
 .map-frame{
   margin-top: 1.5rem;
@@ -327,7 +412,7 @@ a{ color: inherit; }
   vertical-align: top;
 }
 .schedule-table .day-row td{
-  background: rgba(0, 204, 102, 0.12);
+  background: rgba(47, 158, 65, 0.14);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: .78rem;
@@ -394,7 +479,7 @@ a:focus-visible, .btn:focus-visible, .tab-link:focus-visible{
 
 @media (max-width: 640px){
   .hero{ padding: 2.5rem 1.2rem 5rem; }
-  .logo-img{ height: 40px; }
+  .logo-img{ height: 56px; }
   .site-nav{ gap: .25rem; }
   .tab-link{ font-size: .85rem; padding: .5em .8em; }
 }
