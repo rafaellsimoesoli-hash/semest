@@ -1,19 +1,16 @@
-/* =========================================================
-   Tokens — tema claro, inspirado na paleta do IFMT (verde)
-   ========================================================= */
 :root{
-  --bg: #E4F2E5;
-  --bg-elevated: #D6EAD7;
-  --surface: #FFFFFF;
-  --border: rgba(16, 45, 28, 0.14);
+  --bg: #0A1A0E;
+  --bg-elevated: #0F2614;
+  --surface: #1A3321;
+  --border: rgba(30, 122, 61, 0.3);
 
-  --accent: #159447;        /* verde institucional — destaque principal, mais vivo */
-  --accent-dim: #0B6E33;
-  --accent-2: #E1392A;      /* vermelho — contraste, como na logo do IFMT */
-  --accent-2-dim: #B02B20;
+  --accent: #00CC66;
+  --accent-dim: #00994D;
+  --accent-2: #FF3322;
+  --accent-2-dim: #CC291A;
 
-  --text: #16261B;
-  --text-muted: #4A5C50;
+  --text: #E8F5E9;
+  --text-muted: #A5D6A7;
 
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
@@ -21,7 +18,7 @@
 
   --radius: 14px;
   --max-width: 980px;
-  --shadow: 0 1px 2px rgba(16,45,28,0.04), 0 8px 24px rgba(16,45,28,0.06);
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
 }
 
 *{ box-sizing: border-box; }
@@ -53,7 +50,7 @@ a{ color: inherit; }
 
 .skip-link{
   position: absolute; left: -999px; top: 0;
-  background: var(--accent); color: #fff; padding: .6em 1em;
+  background: var(--accent); color: #000; padding: .6em 1em;
   border-radius: 0 0 8px 0; z-index: 100;
 }
 .skip-link:focus{ left: 0; }
@@ -61,9 +58,6 @@ a{ color: inherit; }
 .text-muted{ color: var(--text-muted); }
 .small{ font-size: .85rem; }
 
-/* =========================================================
-   Histogram signature glyphs
-   ========================================================= */
 .bars{ display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
 .bars i{ display:block; width: 3px; background: var(--accent); border-radius: 1px; }
 .bars i:nth-child(1){ height: 40%; }
@@ -81,9 +75,6 @@ a{ color: inherit; }
 .section-mark i{ display:block; width: 6px; border-radius: 2px 2px 0 0; height: var(--h); opacity: .95; background: var(--accent); }
 .section-mark i:nth-child(2){ background: var(--accent-2); }
 
-/* =========================================================
-   Hero
-   ========================================================= */
 .hero{
   position: relative;
   background: linear-gradient(160deg, var(--accent-dim), var(--accent) 65%);
@@ -102,7 +93,12 @@ a{ color: inherit; }
   display: flex; align-items: center; justify-content: center;
   gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap;
 }
-.logo-img{ height: 52px; width: auto; object-fit: contain; }
+.logo-img{ 
+  height: 52px; 
+  width: auto; 
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
 
 .eyebrow{
   font-family: var(--font-mono);
@@ -166,9 +162,6 @@ a{ color: inherit; }
   background: linear-gradient(180deg, var(--accent-2), transparent);
 }
 
-/* =========================================================
-   Page header (subpáginas: Programação, Patrocinadores)
-   ========================================================= */
 .page-header{
   text-align: center;
   padding: 3rem 1.5rem 2.5rem;
@@ -179,13 +172,10 @@ a{ color: inherit; }
 .page-header h1{ font-size: clamp(2rem, 4vw, 2.8rem); color: #fff; }
 .page-header .eyebrow{ color: rgba(255,255,255,0.85); }
 
-/* =========================================================
-   Nav
-   ========================================================= */
 .site-nav{
   position: sticky; top: 0; z-index: 10;
   display: flex; justify-content: center; gap: .5rem;
-  background: rgba(247,250,247,0.92);
+  background: rgba(10, 26, 14, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   padding: .6rem 1rem;
@@ -200,11 +190,8 @@ a{ color: inherit; }
   transition: color .15s ease, background .15s ease;
 }
 .tab-link:hover{ color: var(--text); background: var(--surface); }
-.tab-link.active{ color: #fff; background: var(--accent); font-weight: 600; }
+.tab-link.active{ color: #000; background: var(--accent); font-weight: 600; }
 
-/* =========================================================
-   Sections
-   ========================================================= */
 .page{ max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
 .section{
   padding: 4.5rem 0;
@@ -215,7 +202,7 @@ a{ color: inherit; }
 .section.in-view{ opacity: 1; transform: none; }
 .section:last-of-type{ border-bottom: none; }
 
-.section h2{ font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--accent-dim); }
+.section h2{ font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--accent); }
 .lede{ color: var(--text-muted); max-width: 62ch; font-size: 1.05rem; }
 
 .stat-chips{
@@ -238,7 +225,6 @@ a{ color: inherit; }
 .chip:nth-child(2) .chip-num{ color: var(--accent-2); }
 .chip-label{ color: var(--text-muted); font-size: .88rem; }
 
-/* Empty state (Programação / Patrocinadores) */
 .empty-state{
   background: var(--surface);
   border: 1px dashed var(--border);
@@ -261,12 +247,11 @@ a{ color: inherit; }
   transition: transform .12s ease, background .15s ease;
 }
 .btn:hover{ transform: translateY(-1px); }
-.btn-outline{ background: #fff; border: 1px solid var(--accent); color: var(--accent-dim); }
-.btn-outline:hover{ background: rgba(30,122,61,0.08); }
+.btn-outline{ background: var(--surface); border: 1px solid var(--accent); color: var(--accent); }
+.btn-outline:hover{ background: rgba(0, 204, 102, 0.15); }
 .btn-ghost{ background: transparent; color: var(--text-muted); }
 .btn-ghost:hover{ color: var(--text); }
 
-/* Cards (Contato) */
 .cards-grid{
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem; margin-top: 1.5rem;
@@ -303,9 +288,6 @@ a{ color: inherit; }
 .committee-list li:last-child{ border-bottom: none; }
 .committee-list span{ color: var(--text-muted); font-size: .85rem; }
 
-/* =========================================================
-   Mapa (Local do Evento)
-   ========================================================= */
 .map-frame{
   margin-top: 1.5rem;
   border-radius: var(--radius);
@@ -315,9 +297,6 @@ a{ color: inherit; }
 }
 .map-frame iframe{ display: block; }
 
-/* =========================================================
-   Tabela de programação
-   ========================================================= */
 .schedule-table-wrap{
   margin-top: 1.5rem;
   overflow-x: auto;
@@ -348,8 +327,8 @@ a{ color: inherit; }
   vertical-align: top;
 }
 .schedule-table .day-row td{
-  background: rgba(30,122,61,0.08);
-  color: var(--accent-dim);
+  background: rgba(0, 204, 102, 0.12);
+  color: var(--accent);
   font-family: var(--font-mono);
   font-size: .78rem;
   text-transform: uppercase;
@@ -357,9 +336,6 @@ a{ color: inherit; }
   font-weight: 600;
 }
 
-/* =========================================================
-   Patrocinadores
-   ========================================================= */
 .tier-title{
   font-size: .82rem;
   text-transform: uppercase;
@@ -398,9 +374,6 @@ a{ color: inherit; }
 }
 .sponsor-slot-filled img{ max-width: 100%; max-height: 64px; object-fit: contain; }
 
-/* =========================================================
-   Footer
-   ========================================================= */
 .footer{
   text-align: center;
   padding: 3rem 1.5rem 2.5rem;
@@ -414,17 +387,11 @@ a{ color: inherit; }
 .footer-links a:hover{ color: var(--accent-2); }
 .footer-copy{ color: var(--text-muted); font-size: .8rem; margin: 0; }
 
-/* =========================================================
-   Focus visibility
-   ========================================================= */
 a:focus-visible, .btn:focus-visible, .tab-link:focus-visible{
   outline: 2px solid var(--accent-2);
   outline-offset: 2px;
 }
 
-/* =========================================================
-   Responsive
-   ========================================================= */
 @media (max-width: 640px){
   .hero{ padding: 2.5rem 1.2rem 5rem; }
   .logo-img{ height: 40px; }
