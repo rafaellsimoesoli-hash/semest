@@ -1,24 +1,60 @@
-:root{
-  --bg: #0A1A0E;
-  --bg-elevated: #0F2614;
-  --surface: #1A3321;
-  --border: rgba(47, 158, 65, 0.3);
+:root {
+  /* ================================
+     CORES PRINCIPAIS
+     ================================ */
 
-  --accent: #2F9E41;       /* verde oficial Rede Federal — Pantone 362C */
-  --accent-dim: #1F6E2C;
-  --accent-2: #CD191E;     /* vermelho oficial Rede Federal — Pantone 187C */
-  --accent-2-dim: #9E1317;
+  --bg: #F5F3EE;
+  --bg-elevated: #FFFFFF;
+  --surface: #E8E6DF;
 
-  --text: #E8F5E9;
-  --text-muted: #A5D6A7;
+  --border: rgba(18, 48, 58, 0.16);
+
+
+  /* ================================
+     IDENTIDADE
+     ================================ */
+
+  /* Azul-petróleo — principal */
+  --accent: #12303A;
+
+  /* Verde oliva — secundário */
+  --accent-dim: #536B52;
+
+  /* Terracota — destaque */
+  --accent-2: #B65F4A;
+
+  /* Ocre — destaque pontual */
+  --accent-2-dim: #C39A4B;
+
+
+  /* ================================
+     TIPOGRAFIA
+     ================================ */
+
+  --text: #1B2528;
+  --text-muted: #687275;
+
+
+  /* ================================
+     TIPOGRAFIA
+     ================================ */
 
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
-  --radius: 14px;
-  --max-width: 980px;
-  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
+
+  /* ================================
+     ELEMENTOS
+     ================================ */
+
+  --radius: 8px;
+
+  --max-width: 1180px;
+
+  --shadow:
+    0 1px 2px rgba(18, 48, 58, 0.06),
+    0 8px 24px rgba(18, 48, 58, 0.08);
 }
 
 *{ box-sizing: border-box; }
